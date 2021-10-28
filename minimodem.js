@@ -60,12 +60,12 @@ Minimodem.prototype.drawSpectrogram = function () {
     //    mode:'rgb',
     //    limits:[this.analyser.minDecibels, this.analyser.maxDecibels]
     //});
-    var hot = new chroma.scale({
+    var hot = new chroma.scale(
         ['#000000','#ffff00','#ff0000'],
-        [0,0.5,1])
+        [0,0.5,1]
+        )
         .mode('rgb')
         .limits([this.analyser.minDecibels, this.analyser.maxDecibels])
-    });
 
     requestAnimationFrame(function(){
         //Painting in the first column (check the axis label offset)
