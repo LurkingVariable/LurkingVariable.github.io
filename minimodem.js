@@ -54,11 +54,17 @@ Minimodem.prototype.drawSpectrogram = function () {
     this.analyser.getFloatFrequencyData(array);
 
     //Color scale
-    var hot = new chroma.ColorScale({
-        colors:['#000000','#ffff00','#ff0000'],
-        positions:[0,0.5,1],
-        mode:'rgb',
-        limits:[this.analyser.minDecibels, this.analyser.maxDecibels]
+    //var hot = new chroma.ColorScale({
+    //    colors:['#000000','#ffff00','#ff0000'],
+    //    positions:[0,0.5,1],
+    //    mode:'rgb',
+    //    limits:[this.analyser.minDecibels, this.analyser.maxDecibels]
+    //});
+    var hot = new chroma.scale({
+        ['#000000','#ffff00','#ff0000'],
+        [0,0.5,1])
+        .mode('rgb')
+        .limits([this.analyser.minDecibels, this.analyser.maxDecibels])
     });
 
     requestAnimationFrame(function(){
@@ -66,7 +72,7 @@ Minimodem.prototype.drawSpectrogram = function () {
         var axisSpace = 50
         for (var i = 0; i < array.length; i++) {
             if (this.audioPlaying == true) {
-                this.graphContext.fillStyle = hot.getColor(array[i]).hex();
+                this.graphContext.fillStyle = hot.(array[i]).hex();
             }else{
                 this.graphContext.fillStyle = "#000000";
             }
