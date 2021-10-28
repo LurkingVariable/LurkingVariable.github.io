@@ -15,6 +15,11 @@
         <input type="button" id="send" value="Send">
     </form>
 -->
+    <form>
+        <input type="file" id="datafile">
+        <input type="button" id="send" value="Send">
+    </form>
+
     <p>System Output</p>
     <canvas id="spectrogramTx" width="800" height="256" style="display: block; background-color: black ;"></canvas>
     <p>Mic Input</p>
@@ -28,7 +33,7 @@ $( document ).ready(function() {
     var m2 = new Minimodem($( "#spectrogramTx" ).get()[0].getContext("2d"))
     m1.listen()
     $("#send").on("click",function(){
-        var t = $( "#text" ).val();
+        var t = $( "#datafile" ).val();
         //m2.QFSK(t,150,3000,150);
         m2.BASK(t,100,11000);
         //m2.BASK(t,100,11000);
