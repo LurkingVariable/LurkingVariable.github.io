@@ -65,7 +65,7 @@ Minimodem.prototype.drawSpectrogram = function () {
         [0,0.5,1]
         )
         .mode('rgb')
-        .limits([this.analyser.minDecibels, this.analyser.maxDecibels])
+        .domain([this.analyser.minDecibels, this.analyser.maxDecibels])
 
     requestAnimationFrame(function(){
         //Painting in the first column (check the axis label offset)
