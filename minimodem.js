@@ -72,7 +72,7 @@ Minimodem.prototype.drawSpectrogram = function () {
         var axisSpace = 50
         for (var i = 0; i < array.length; i++) {
             if (this.audioPlaying == true) {
-                this.graphContext.fillStyle = hot.(array[i]).hex();
+                this.graphContext.fillStyle = hot(array[i]).hex();
             }else{
                 this.graphContext.fillStyle = "#000000";
             }
