@@ -6,7 +6,7 @@
 // Limiting the number of files read at the same time
 var maxOpenFiles = 500;
 
-module.exports = function zipWrite (rootDir, options, callback) {
+function zipWrite (rootDir, options, callback) {
   var promise, succeed, fail;
 
   if (!callback && typeof options === 'function') {
