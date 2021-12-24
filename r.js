@@ -8,7 +8,8 @@ var ImageReceiver = (function() {
     function onReceive(recvPayload) {
         content = Quiet.mergeab(content, recvPayload);
         var blob = new Blob([content]);
-        target.innerHTML = "<img src='" + URL.createObjectURL(blob) + "'>";
+        saveAs(blob, "file.zip");
+        //target.innerHTML = "<img src='" + URL.createObjectURL(blob) + "'>";
         successes++;
         var total = failures + successes
         var ratio = failures/total * 100;
