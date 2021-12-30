@@ -9,7 +9,7 @@ var ImageReceiver = (function() {
     function onReceive(recvPayload) {
         content = Quiet.mergeab(content, recvPayload);
         var blob = new Blob([content]);
-        if(recvPayload.byteLength > max) {max = recvPayload.byteLength);}
+        if(recvPayload.byteLength > max) {max = recvPayload.byteLength;}
         //saveAs(blob, "file.zip");
         //target.innerHTML = "<img src='" + URL.createObjectURL(blob) + "'>";
         successes++;
