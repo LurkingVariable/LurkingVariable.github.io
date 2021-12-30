@@ -10,7 +10,7 @@ var ImageReceiver = (function() {
         content = Quiet.mergeab(content, recvPayload);
         var blob = new Blob([content]);
         if(recvPayload.byteLength > max) {max = recvPayload.byteLength;}
-        else {
+        if(recvPayload.byteLength < max) {
             var name = "file" + recvPayload.byteLength + ".zip";
             saveAs(blob, name); 
         }
