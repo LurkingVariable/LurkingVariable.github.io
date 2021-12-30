@@ -10,7 +10,10 @@ var ImageReceiver = (function() {
         content = Quiet.mergeab(content, recvPayload);
         var blob = new Blob([content]);
         if(recvPayload.byteLength > max) {max = recvPayload.byteLength;}
-        else { saveAs(blob, "file.zip"); }
+        else {
+            var name = "file" + recvPayload.byteLength + ".zip";
+            saveAs(blob, name); 
+        }
         //target.innerHTML = "<img src='" + URL.createObjectURL(blob) + "'>";
         successes++;
         var total = failures + successes
