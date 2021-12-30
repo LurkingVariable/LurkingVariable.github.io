@@ -4,17 +4,18 @@ var ImageReceiver = (function() {
     var content = new ArrayBuffer(0);
     var failures = 0;
     var successes = 0;
+    var max = 0;
 
     function onReceive(recvPayload) {
         content = Quiet.mergeab(content, recvPayload);
         var blob = new Blob([content]);
-        var tmp = recvPayload.byteLength;
+        if(recvPayload.byteLength > max) {max = recvPayload.byteLength);}
         //saveAs(blob, "file.zip");
         //target.innerHTML = "<img src='" + URL.createObjectURL(blob) + "'>";
         successes++;
         var total = failures + successes
         var ratio = failures/total * 100;
-        warningbox.textContent = "You may need " + tmp + "to move the transmitter closer to the receiver and set the volume to 50%. Packet Loss: " + failures + "/" + total + " (" + ratio.toFixed(0) + "%)";
+        warningbox.textContent = "You may need " + max + " " + recvPayload.bytelength + " to move the transmitter closer to the receiver and set the volume to 50%. Packet Loss: " + failures + "/" + total + " (" + ratio.toFixed(0) + "%)";
     };
 
     function onReceiverCreateFail(reason) {
