@@ -15,7 +15,7 @@ var ImageReceiver = (function() {
         successes++;
         var total = failures + successes
         var ratio = failures/total * 100;
-        warningbox.textContent = "You may need " + max + " " + recvPayload.bytelength + " to move the transmitter closer to the receiver and set the volume to 50%. Packet Loss: " + failures + "/" + total + " (" + ratio.toFixed(0) + "%)";
+        warningbox.textContent = "You may need " + max + " " + recvPayload.byteLength + " to move the transmitter closer to the receiver and set the volume to 50%. Packet Loss: " + failures + "/" + total + " (" + ratio.toFixed(0) + "%)";
     };
 
     function onReceiverCreateFail(reason) {
