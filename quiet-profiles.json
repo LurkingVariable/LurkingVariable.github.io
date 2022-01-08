@@ -4,16 +4,16 @@
   "checksum_scheme": "crc32",
   "inner_fec_scheme": "rs8",
   "outer_fec_scheme": "rs8",
-  "frame_length": 1000,
+  "frame_length": 100,
   "modulation": {
     "center_frequency": 10200,
     "gain": 0.09
   },
   "interpolation": {
     "shape": "kaiser",
-    "samples_per_symbol": 10,
-    "symbol_delay": 13,
-    "excess_bandwidth": 0.3
+    "samples_per_symbol": 2,
+    "symbol_delay": 4,
+    "excess_bandwidth": 0.35
   },
   "encoder_filters": {
     "dc_filter_alpha": 0.1
