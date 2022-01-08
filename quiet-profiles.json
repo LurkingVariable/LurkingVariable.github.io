@@ -31,7 +31,7 @@
     "left_band": 6,
     "right_band": 12
   }
-}
+},
     "audible": {
         "checksum_scheme": "crc32",
         "inner_fec_scheme": "v27",
