@@ -11,9 +11,9 @@
   },
   "interpolation": {
     "shape": "kaiser",
-    "samples_per_symbol": 40,
-    "symbol_delay": 13,
-    "excess_bandwidth": 0.3
+    "samples_per_symbol": 2,
+    "symbol_delay": 4,
+    "excess_bandwidth": 0.35
   },
   "encoder_filters": {
     "dc_filter_alpha": 0.1
