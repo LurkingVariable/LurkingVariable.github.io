@@ -2,7 +2,7 @@
     "testFL" : {
   "mod_scheme": "qam1024",
   "checksum_scheme": "crc32",
-  "inner_fec_scheme": "rs8",
+  "inner_fec_scheme": "v29p78",
   "outer_fec_scheme": "rs8",
   "frame_length": 100,
   "modulation": {
