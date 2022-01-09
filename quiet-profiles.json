@@ -2,9 +2,9 @@
     "testFL" : {
   "mod_scheme": "qam1024",
   "checksum_scheme": "crc32",
-  "inner_fec_scheme": "v27p23",
+  "inner_fec_scheme": "rs8",
   "outer_fec_scheme": "rs8",
-  "frame_length": 100,
+  "frame_length": 50,
   "modulation": {
     "center_frequency": 10200,
     "gain": 0.09
