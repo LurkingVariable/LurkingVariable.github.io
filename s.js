@@ -23,7 +23,14 @@ var ImageTransmitter = (function() {
             onTransmitFinish();
             return;
         }
-        transmit.transmit(payload);
+        var frags = 40;
+        var errors = 10;
+        var bfrags = erasure.split(payload, frags, errors);
+        var rspl = new ArrayBuffer(0);
+        for (var i=0; i < frags; i++) 
+            rspl = Quiet.mergeab(rspl, bfrags[i]);
+        transmit.transmit(rspl);
+        //transmit.transmit(payload);
     };
 
     function onFileRead(e) {
