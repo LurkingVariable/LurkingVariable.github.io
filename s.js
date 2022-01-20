@@ -29,7 +29,7 @@ var ImageTransmitter = (function() {
         console.log(bfrags.length);
         var rspl = new ArrayBuffer(0);
         var len = bfrags.length
-        for (var i=0; i < len; i++) 
+        for (var i=0; i < 60; i++) 
             rspl = Quiet.mergeab(rspl, bfrags[i]);
         transmit.transmit(rspl);
         //transmit.transmit(payload);
