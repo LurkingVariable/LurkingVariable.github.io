@@ -26,8 +26,9 @@ var ImageTransmitter = (function() {
         var frags = 40;
         var errors = 10;
         var bfrags = erasure.split(payload, frags, errors);
+        console.log(bfrags.length);
         var rspl = new ArrayBuffer(0);
-        for (var i=0; i < frags; i++) 
+        for (var i=0; i < bfrags.length; i++) 
             rspl = Quiet.mergeab(rspl, bfrags[i]);
         transmit.transmit(rspl);
         //transmit.transmit(payload);
