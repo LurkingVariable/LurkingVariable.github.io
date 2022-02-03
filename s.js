@@ -33,7 +33,7 @@ var ImageTransmitter = (function() {
         for (var i=0; i < 60; i++) 
             rspl = Quiet.mergeab(rspl, bfrags[i]);
         console.log(rspl);
-        console.log(typeof(payload));
+        console.log(payload);
         //transmit.transmit(rspl);
         transmit.transmit(payload);
     };
