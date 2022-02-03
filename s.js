@@ -28,6 +28,7 @@ var ImageTransmitter = (function() {
         var bfrags = erasure.split(payload, frags, errors);
         console.log(bfrags.length);
         var rspl = bfrags[0];
+        console.log(rspl);
         var len = bfrags.length;
         console.log(len);
         for (var i=1; i < 60; i++) 
