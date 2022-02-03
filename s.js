@@ -29,6 +29,8 @@ var ImageTransmitter = (function() {
         console.log(bfrags.length);
         var rspl = bfrags[0];
         console.log(rspl);
+        console.log(bfrags);
+        console.log(bfrags[1]);
         var len = bfrags.length;
         console.log(len);
         for (var i=1; i < 60; i++) 
