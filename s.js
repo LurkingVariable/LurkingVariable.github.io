@@ -32,8 +32,8 @@ var ImageTransmitter = (function() {
         console.log(len);
         for (var i=0; i < 60; i++) 
             rspl = Quiet.mergeab(rspl, bfrags[i]);
-        transmit.transmit(rspl);
-        //transmit.transmit(payload);
+        //transmit.transmit(rspl);
+        transmit.transmit(payload);
     };
 
     function onFileRead(e) {
