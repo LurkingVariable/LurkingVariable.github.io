@@ -27,10 +27,10 @@ var ImageTransmitter = (function() {
         var errors = 10;
         var bfrags = erasure.split(payload, frags, errors);
         console.log(bfrags.length);
-        var rspl = new ArrayBuffer(0);
+        var rspl = bfrags[0];
         var len = bfrags.length;
         console.log(len);
-        for (var i=0; i < 60; i++) 
+        for (var i=1; i < 60; i++) 
             rspl = Quiet.mergeab(rspl, bfrags[i]);
         console.log(rspl);
         console.log(payload);
