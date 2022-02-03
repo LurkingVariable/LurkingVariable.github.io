@@ -35,7 +35,7 @@ var ImageTransmitter = (function() {
         }
         var frags = 40;
         var errors = 10;
-        const raw = new Uint8Array(5*1024*1024);
+        const raw = Uint8Array(5*1024*1024);
         console.log(raw.byteLength);
         console.log(payload.byteLength);
         var temp = new Uint8Array.from(payload);
