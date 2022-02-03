@@ -29,6 +29,7 @@ var ImageTransmitter = (function() {
         console.log(raw.byteLength)
         var bfrags = erasure.split(payload, frags, errors);
         var decoded = erasure.recombine(bfrags, 5*1024*1024, 40, 10);
+        console.log(arraysEqual(payload,decoded));
         console.log(bfrags.length);
         var rspl = bfrags[0];
         console.log(rspl);
