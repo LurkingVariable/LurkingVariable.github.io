@@ -39,8 +39,7 @@ var ImageTransmitter = (function() {
         console.log(raw.byteLength);
         console.log(payload.byteLength);
         var temp = Uint8Array.from(payload);
-        var temp2 = new FileReader();
-        temp2.readAsArrayBuffer(temp);
+        var temp2 = new Blob([temp]);
         var bfrags = erasure.split(temp, frags, errors);
         console.log(temp)
         //var decoded = erasure.recombine(bfrags, payload.byteLength, 40, 10);
