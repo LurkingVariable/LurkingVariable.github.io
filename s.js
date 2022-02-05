@@ -40,7 +40,10 @@ var ImageTransmitter = (function() {
         console.log(payload.byteLength);
         var temp = Uint8Array.from(payload);
         var temp2 = new Blob([temp]);
-        console.log(temp2.byteLength);      
+        console.log(temp2.byteLength); 
+        console.log(temp2);
+        var name = "file" + temp2.byteLength + ".pdf";
+        saveAs(blob, name); 
         var bfrags = erasure.split(temp, frags, errors);
         console.log(temp)
         //var decoded = erasure.recombine(bfrags, payload.byteLength, 40, 10);
