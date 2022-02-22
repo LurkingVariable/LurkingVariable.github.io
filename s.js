@@ -48,8 +48,10 @@ var ImageTransmitter = (function() {
         console.log(temp.byteLength); 
         console.log(temp);
         //saveAs(temp, name); 
+        //Need to convert either Blob or ArrayBuffer to Uint8Array
         //var temp2 = Uint8Array.from(temp);
-        var temp2 = new Uint8Array(temp);
+        //var temp2 = new Uint8Array(temp);
+        var temp2 = new Uint8Array(payload);
         console.log(temp2.byteLength);
         console.log(temp2);
         console.log(arraysEqual(payload,temp2));  
