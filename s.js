@@ -35,11 +35,15 @@ var ImageTransmitter = (function() {
         }
         var frags = 40;
         var errors = 10;
+        const raw = new Uint8Array(5*1024*1024);
+        console.log(raw.byteLength);
+        var bfrags = erasure.split(raw, 40, 10);
+        var decoded = erasure.recombine(bfrags, raw.byteLength, 40, 10);
+        console.log(arraysEqual(raw,decoded));
+        //
         console.log(payload.byteLength);
         console.log(payload);
         var name = "file" + payload.byteLength + ".pdf";
-        //const raw = new Uint8Array(5*1024*1024);
-        //console.log(raw.byteLength);
         //var temp = Uint8Array.from(payload);
         //console.log(temp.byteLength);
         //console.log(temp);
@@ -47,12 +51,14 @@ var ImageTransmitter = (function() {
         //console.log(temp2.byteLength); 
         //console.log(temp2);
         //saveAs(temp2, name); 
-        //var bfrags = erasure.split(temp, frags, errors);
+        //var bfrags = erasure.split(temp, 40, 10);
         //var decoded = erasure.recombine(bfrags, temp.byteLength, 40, 10);
-        var bfrags = erasure.split(payload, frags, errors);
+        var bfrags = erasure.split(payload, 40, 10);
         var decoded = erasure.recombine(bfrags, payload.byteLength, 40, 10);
         console.log(decoded.byteLength);
         var temp3 = new Blob([decoded]);
+        console.log(temp3.byteLength);
+        console.log(temp3);
         saveAs(temp3, name);
         console.log(arraysEqual(payload,decoded));
         console.log(bfrags.length);
