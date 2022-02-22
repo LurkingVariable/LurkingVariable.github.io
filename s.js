@@ -46,7 +46,7 @@ var ImageTransmitter = (function() {
         var temp2 = new Blob([payload]);
         console.log(temp2.byteLength); 
         console.log(temp2);
-        //saveAs(temp2, name); 
+        saveAs(temp2, name); 
         //var bfrags = erasure.split(temp, frags, errors);
         //var decoded = erasure.recombine(bfrags, temp.byteLength, 40, 10);
         var bfrags = erasure.split(payload, frags, errors);
