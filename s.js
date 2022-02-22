@@ -61,7 +61,9 @@ var ImageTransmitter = (function() {
         //saveAs(temp3, name);       
         //
         var bfrags = erasure.split(temp2, 40, 10);
-        var decoded = erasure.recombine(bfrags, temp2.byteLength, 40, 10);
+        //var decoded = erasure.recombine(bfrags, temp2.byteLength, 40, 10);
+        //What happens if we don't trim the buffer to the right length? 
+        var decoded = erasure.recombine(bfrags, 42000, 40, 10);
         console.log(arraysEqual(temp2,decoded));
         console.log(decoded.byteLength);
         var temp4 = new Blob([decoded]);
