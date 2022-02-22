@@ -43,16 +43,16 @@ var ImageTransmitter = (function() {
         //
         console.log(payload.byteLength);
         console.log(payload);
+        var temp = new Blob([payload]);
+        console.log(temp.byteLength); 
+        console.log(temp);
+        //saveAs(temp, name); 
+        var temp2 = Uint8Array.from(temp);
+        console.log(temp2.byteLength);
+        console.log(temp2);
+        console.log(arraysEqual(payload,temp2));  
+        //
         var name = "file" + payload.byteLength + ".pdf";
-        //var temp = Uint8Array.from(payload);
-        //console.log(temp.byteLength);
-        //console.log(temp);
-        //var temp2 = new Blob([payload]);
-        //console.log(temp2.byteLength); 
-        //console.log(temp2);
-        //saveAs(temp2, name); 
-        //var bfrags = erasure.split(temp, 40, 10);
-        //var decoded = erasure.recombine(bfrags, temp.byteLength, 40, 10);
         var bfrags = erasure.split(payload, 40, 10);
         var decoded = erasure.recombine(bfrags, payload.byteLength, 40, 10);
         console.log(decoded.byteLength);
