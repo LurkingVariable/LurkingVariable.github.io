@@ -48,24 +48,25 @@ var ImageTransmitter = (function() {
         console.log(temp.byteLength); 
         console.log(temp);
         //saveAs(temp, name); 
-        var temp2 = Uint8Array.from(temp);
+        //var temp2 = Uint8Array.from(temp);
+        var temp2 = new Uint8Array(temp);
         console.log(temp2.byteLength);
         console.log(temp2);
         console.log(arraysEqual(payload,temp2));  
         var temp3 = new Blob([temp2]);
         console.log(temp3.byteLength);
         console.log(temp3);
-        console.log(arraysEqual(temp,temp3));
         saveAs(temp3, name);       
         //
         var bfrags = erasure.split(payload, 40, 10);
         var decoded = erasure.recombine(bfrags, payload.byteLength, 40, 10);
+        console.log(arraysEqual(payload,decoded));
         console.log(decoded.byteLength);
         var temp4 = new Blob([decoded]);
         console.log(temp4.byteLength);
         console.log(temp4);
         //saveAs(temp4, name);
-        console.log(arraysEqual(payload,decoded));
+        //
         console.log(bfrags.length);
         var rspl = bfrags[0];
         console.log(rspl);
