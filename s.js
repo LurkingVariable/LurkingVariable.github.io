@@ -33,6 +33,7 @@ var ImageTransmitter = (function() {
             onTransmitFinish();
             return;
         }
+        var name = "file" + payload.byteLength + ".pdf";
         var frags = 40;
         var errors = 10;
         const raw = new Uint8Array(5*1024*1024);
@@ -51,15 +52,19 @@ var ImageTransmitter = (function() {
         console.log(temp2.byteLength);
         console.log(temp2);
         console.log(arraysEqual(payload,temp2));  
+        var temp3 = new Blob([temp2]);
+        console.log(temp3.byteLength);
+        console.log(temp3);
+        console.log(arraysEqual(temp,temp3));
+        saveAs(temp3, name);       
         //
-        var name = "file" + payload.byteLength + ".pdf";
         var bfrags = erasure.split(payload, 40, 10);
         var decoded = erasure.recombine(bfrags, payload.byteLength, 40, 10);
         console.log(decoded.byteLength);
-        var temp3 = new Blob([decoded]);
-        console.log(temp3.byteLength);
-        console.log(temp3);
-        saveAs(temp3, name);
+        var temp4 = new Blob([decoded]);
+        console.log(temp4.byteLength);
+        console.log(temp4);
+        //saveAs(temp4, name);
         console.log(arraysEqual(payload,decoded));
         console.log(bfrags.length);
         var rspl = bfrags[0];
