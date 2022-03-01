@@ -67,6 +67,8 @@ var ImageTransmitter = (function() {
         var decoded = erasure.recombine(bfrags, leng, 40, 10);
         console.log(arraysEqual(temp2,decoded));
         console.log(decoded.byteLength);
+        console.log(decoded);
+        console.log(temp2);
         var temp4 = new Blob([decoded]);
         console.log(temp4.byteLength);
         console.log(temp4);
