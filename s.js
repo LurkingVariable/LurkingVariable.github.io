@@ -52,7 +52,10 @@ var ImageTransmitter = (function() {
         //Need to convert either Blob or ArrayBuffer to Uint8Array
         //var temp2 = Uint8Array.from(temp);
         //var temp2 = new Uint8Array(temp);
-        var temp2 = new Uint8Array(payload);
+        var zip = new JSZip();
+        zip.file(name, payload);
+        //var temp2 = new Uint8Array(payload);
+        var temp2 = new Uint8Array(zip);
         console.log(temp2.byteLength);
         console.log(temp2);
         console.log(arraysEqual(payload,temp2));  
@@ -73,7 +76,8 @@ var ImageTransmitter = (function() {
         var temp4 = new Blob([decoded]);
         console.log(temp4.byteLength);
         console.log(temp4);
-        saveAs(temp4, name);
+        //saveAs(temp4, name);
+        saveAs(temp4, "temp.zip");
         //
         console.log(bfrags.length);
         var rspl = bfrags[0];
