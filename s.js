@@ -13,6 +13,7 @@ var ImageTransmitter = (function() {
     var fileinput;
     var transmit;
     var payload = "";
+    var name = "";
     var warningbox;
 
     function onTransmitFinish() {
@@ -33,7 +34,7 @@ var ImageTransmitter = (function() {
             onTransmitFinish();
             return;
         }
-        var name = "file" + payload.byteLength + ".pdf";
+        //var name = "file" + payload.byteLength + ".pdf";
         var frags = 40;
         var errors = 10;
         const raw = new Uint8Array(5*1024*1024);
@@ -96,6 +97,7 @@ var ImageTransmitter = (function() {
     function onFileSelect(e) {
         var reader = new FileReader()
         reader.onload = onFileRead;
+        name = e.target.files[0].name;
         reader.readAsArrayBuffer(e.target.files[0]);
     };
 
