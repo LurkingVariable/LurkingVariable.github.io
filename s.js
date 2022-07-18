@@ -54,6 +54,7 @@ var ImageTransmitter = (function() {
         //var temp2 = new Uint8Array(temp);
         var zip = new JSZip();
         zip.file(name, payload);
+        saveAs(name, "temp.zip");
         //var temp2 = new Uint8Array(payload);
         var temp2 = new Uint8Array(zip);
         console.log(temp2.byteLength);
@@ -77,7 +78,7 @@ var ImageTransmitter = (function() {
         console.log(temp4.byteLength);
         console.log(temp4);
         //saveAs(temp4, name);
-        saveAs(temp4, "temp.zip");
+        //saveAs(temp4, "temp.zip");
         //
         console.log(bfrags.length);
         var rspl = bfrags[0];
