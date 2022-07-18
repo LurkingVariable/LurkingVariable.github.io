@@ -54,7 +54,7 @@ var ImageTransmitter = (function() {
         //var temp2 = new Uint8Array(temp);
         var zip = new JSZip();
         zip.file(name, temp);
-        saveAs(zip, "temp.zip");
+        zip.generateAsync({type:"blob"}).then(function (blob) {saveAs(blob, "temp.zip");});
         //var temp2 = new Uint8Array(payload);
         var temp2 = new Uint8Array(zip);
         console.log(temp2.byteLength);
