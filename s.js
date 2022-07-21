@@ -54,7 +54,7 @@ var ImageTransmitter = (function() {
         //var temp2 = new Uint8Array(temp);
         var zip = new JSZip();
         zip.file(name, temp);
-        zip.generateAsync({type:"blob"}).then(function (blob) {saveAs(blob, "temp.zip");});
+        //zip.generateAsync({type:"blob"}).then(function (blob) {saveAs(blob, "temp.zip");});
         //var temp2 = new Uint8Array(payload);
         var temp2 = new Uint8Array(zip);
         console.log(temp2.byteLength);
@@ -79,6 +79,7 @@ var ImageTransmitter = (function() {
         console.log(temp4);
         //saveAs(temp4, name);
         //saveAs(temp4, "temp.zip");
+        temp4.generateAsync({type:"blob"}).then(function (blob) {saveAs(blob, "temp.zip");});
         //
         console.log(bfrags.length);
         var rspl = bfrags[0];
